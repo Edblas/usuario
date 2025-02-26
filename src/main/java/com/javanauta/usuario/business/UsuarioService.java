@@ -42,8 +42,7 @@ public class UsuarioService {
     }
 
     public Usuario buscarUsuarioPorEmail(String email) {
-        return usuarioRepository.findByEmail(email).orElseThrow(
-                () -> new ResourceNotFoundException("Email não encontrado: " + email));
+        return usuarioRepository.findByEmail(email).orElseThrow(() -> new ResourceNotFoundException("Email não encontrado: " + email));
     }
     public void deletaUsuarioPorEmail(String email) {
 
